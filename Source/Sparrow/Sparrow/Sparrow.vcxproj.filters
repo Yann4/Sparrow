@@ -17,5 +17,8 @@
     <ClCompile Include="Main.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="ThirdParty\glad\src\glad.c">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
