@@ -4,15 +4,45 @@
     <Filter Include="Core">
       <UniqueIdentifier>{ee696b70-b3f0-44f1-bee5-de33e87fb36c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Window.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Defines.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Renderer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\GLRenderer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Callback.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Window.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Renderer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\GLRenderer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\glad\src\glad.c">
+      <Filter>Rendering</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
