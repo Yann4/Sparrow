@@ -31,6 +31,11 @@ namespace Sparrow
 			m_Initialised = true;
 		}
 
+		GLRenderer::~GLRenderer()
+		{
+			glfwTerminate();
+		}
+
 		void GLRenderer::OnWindowResized(int32_t width, int32_t height)
 		{
 			std::cout << "Window resized to (" << width << ", " << height << ")\n";

@@ -12,6 +12,8 @@ namespace Sparrow
 		{
 		public:
 			GLRenderer(int32_t width, int32_t height, const char* windowName);
+			~GLRenderer();
+
 			void Update() override;
 
 		private:
