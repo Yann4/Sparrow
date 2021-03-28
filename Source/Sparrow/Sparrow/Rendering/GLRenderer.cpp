@@ -28,6 +28,10 @@ namespace Sparrow
 
 			glViewport(0, 0, m_Window->GetWidth(), m_Window->GetHeight());
 			Window::OnWindowResized += std::bind(&GLRenderer::OnWindowResized, this, std::placeholders::_1, std::placeholders::_2);
+
+			m_Material = std::make_shared<Material>();
+			m_Mesh = std::make_shared<Mesh>(m_Material);
+
 			m_Initialised = true;
 		}
 
@@ -44,6 +48,11 @@ namespace Sparrow
 
 		void GLRenderer::Update()
 		{
+			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+
+			m_Mesh->Render();
+
 			glfwSwapBuffers(m_Window->GetHandle());
 			glfwPollEvents();
 		}

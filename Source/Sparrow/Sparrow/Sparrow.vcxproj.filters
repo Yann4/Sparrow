@@ -27,6 +27,12 @@
     <ClInclude Include="Core\Callback.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Rendering\Mesh.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Material.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,6 +48,12 @@
       <Filter>Rendering</Filter>
     </ClCompile>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Mesh.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Material.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
   </ItemGroup>
