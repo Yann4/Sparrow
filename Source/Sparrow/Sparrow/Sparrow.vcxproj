@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="Core\Callback.h" />
     <ClInclude Include="Core\Defines.h" />
+    <ClInclude Include="Input\Input.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Rendering\GLRenderer.h" />
     <ClInclude Include="Rendering\Renderer.h" />

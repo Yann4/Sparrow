@@ -7,6 +7,9 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{034f1b5a-2e86-4ce1-979c-4dbbd8ce9ca3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -26,6 +29,9 @@
     </ClInclude>
     <ClInclude Include="Core\Callback.h">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Input.h">
+      <Filter>Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
