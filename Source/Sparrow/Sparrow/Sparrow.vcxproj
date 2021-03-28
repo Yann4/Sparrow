@@ -148,10 +148,14 @@
     <ClInclude Include="Core\Callback.h" />
     <ClInclude Include="Core\Defines.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="Rendering\GLRenderer.h" />
+    <ClInclude Include="Rendering\Renderer.h" />
     <ClInclude Include="Rendering\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Rendering\GLRenderer.cpp" />
+    <ClCompile Include="Rendering\Renderer.cpp" />
     <ClCompile Include="Rendering\Window.cpp" />
     <ClCompile Include="ThirdParty\glad\src\glad.c" />
   </ItemGroup>
