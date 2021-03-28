@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Callback.h" />
     <ClInclude Include="Core\Defines.h" />
     <ClInclude Include="Main.h" />
   </ItemGroup>
