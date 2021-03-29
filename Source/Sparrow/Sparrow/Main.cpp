@@ -1,15 +1,29 @@
 #include "Main.h"
 #include "Rendering/GLRenderer.h"
 
-#include <memory>
 int main(int argc, char** argv)
 {
-	std::unique_ptr<Sparrow::Rendering::Renderer> renderer = std::make_unique<Sparrow::Rendering::GLRenderer>(800, 600, "Sparrow");
+	Sparrow::Application app;
 
-	while (!renderer->GetWindow()->ShouldClose())
-	{
-		renderer->Update();
-	}
+	app.Run();
 
 	return 0;
+}
+
+namespace Sparrow
+{
+	Application::Application() :
+		Renderer(std::make_unique<Rendering::GLRenderer>(800, 600, "Sparrow")),
+		InputManager(std::make_unique<Input::Manager>())
+	{ }
+
+	void Application::Run()
+	{
+		while (!Renderer->GetWindow()->ShouldClose())
+		{
+			InputManager->Update();
+
+			Renderer->Update();
+		}
+	}
 }
