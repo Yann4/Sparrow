@@ -45,6 +45,9 @@
     <ClInclude Include="Input\ControllerMap.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="Input\ActionMap.h">
+      <Filter>Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -69,6 +72,12 @@
       <Filter>Input</Filter>
     </ClCompile>
     <ClCompile Include="Input\ControllerMap.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\ActionMap.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\Input.cpp">
       <Filter>Input</Filter>
     </ClCompile>
   </ItemGroup>
