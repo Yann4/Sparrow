@@ -1,14 +1,14 @@
 #pragma once
 
-#include "InputAction.h"
+#include "Action.h"
 
 namespace Sparrow
 {
 	namespace Input
 	{
-		bool GetAction(InputAction action);
-		bool GetActionUp(InputAction action);
-		bool GetActionDown(InputAction action);
+		bool GetAction(Action action);
+		bool GetActionUp(Action action);
+		bool GetActionDown(Action action);
 
 		void Update();
 	}

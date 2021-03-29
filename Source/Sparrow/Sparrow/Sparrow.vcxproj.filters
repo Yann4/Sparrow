@@ -33,6 +33,18 @@
     <ClInclude Include="Input\Input.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="Input\ControllerElement.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Controller.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Action.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\ControllerMap.h">
+      <Filter>Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -49,6 +61,15 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\ControllerElement.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\Controller.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\ControllerMap.cpp">
+      <Filter>Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
