@@ -157,6 +157,12 @@
     <ClInclude Include="Core\Utilities\Callback.h" />
     <ClInclude Include="Core\Utilities\Hash.h" />
     <ClInclude Include="FileSystem\FileSystem.h" />
+    <ClInclude Include="Input\Action.h" />
+    <ClInclude Include="Input\ActionMap.h" />
+    <ClInclude Include="Input\Controller.h" />
+    <ClInclude Include="Input\ControllerElement.h" />
+    <ClInclude Include="Input\ControllerMap.h" />
+    <ClInclude Include="Input\Input.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Rendering\GLRenderer.h" />
     <ClInclude Include="Rendering\Renderer.h" />
@@ -167,6 +173,11 @@
   <ItemGroup>
     <ClCompile Include="FileSystem\FileSystem.cpp" />
     <ClCompile Include="FileSystem\FileSystem_Windows.cpp" />
+    <ClCompile Include="Input\ActionMap.cpp" />
+    <ClCompile Include="Input\Controller.cpp" />
+    <ClCompile Include="Input\ControllerElement.cpp" />
+    <ClCompile Include="Input\ControllerMap.cpp" />
+    <ClCompile Include="Input\Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Rendering\GLRenderer.cpp" />
     <ClCompile Include="Rendering\Renderer.cpp" />
