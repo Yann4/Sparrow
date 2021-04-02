@@ -2,6 +2,7 @@
 #include <functional>
 #include <memory>
 #include <type_traits>
+#include <sstream>
 
 #include "FileSystem/FileSystem.h"
 #include "Serialisable.h"
@@ -44,7 +45,7 @@ namespace Sparrow
 			template <class AssetType, typename = std::enable_if<std::is_base_of_v<Serialisable, AssetType>>>
 			static bool Save(AssetClass type, const char* path, const AssetType& serialise)
 			{
-				std::ofstream stream(buffer);
+				std::stringstream stream;
 				serialise.Serialise(stream);
 				
 				FileSystem::Save(stream, path);
@@ -55,7 +56,7 @@ namespace Sparrow
 			template <class AssetType, typename = std::enable_if<std::is_base_of_v<Serialisable, AssetType>>>
 			static bool Load(AssetClass type, const char* path, AssetLoadedEvent<AssetType> OnLoaded)
 			{
-				FileSystem::Load(path, [OnLoaded](std::istream & stream)
+				FileSystem::Load(path, [type, path, OnLoaded](std::istream & stream)
 				{
 					uint16_t version;
 					stream >> version;
