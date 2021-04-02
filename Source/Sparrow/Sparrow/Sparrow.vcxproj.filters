@@ -7,6 +7,15 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Serialisation">
+      <UniqueIdentifier>{00c47eb3-d16d-4a79-bca8-a20029199463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utilities">
+      <UniqueIdentifier>{9ddf94d0-49da-4e61-b8e1-42648808c3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{31e8dcd8-7eaa-4ed2-ab21-f5877239423a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -24,8 +33,20 @@
     <ClInclude Include="Rendering\GLRenderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Callback.h">
-      <Filter>Core</Filter>
+    <ClInclude Include="Serialisation\AssetManager.h">
+      <Filter>Serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utilities\Callback.h">
+      <Filter>Core\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialisation\Serialisable.h">
+      <Filter>Serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utilities\Hash.h">
+      <Filter>Core\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileSystem.h">
+      <Filter>FileSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileSystem_Windows.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileSystem.cpp">
+      <Filter>FileSystem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
