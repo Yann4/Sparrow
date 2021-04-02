@@ -7,8 +7,14 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Input">
-      <UniqueIdentifier>{034f1b5a-2e86-4ce1-979c-4dbbd8ce9ca3}</UniqueIdentifier>
+    <Filter Include="Serialisation">
+      <UniqueIdentifier>{00c47eb3-d16d-4a79-bca8-a20029199463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utilities">
+      <UniqueIdentifier>{9ddf94d0-49da-4e61-b8e1-42648808c3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{31e8dcd8-7eaa-4ed2-ab21-f5877239423a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,26 +33,20 @@
     <ClInclude Include="Rendering\GLRenderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Callback.h">
-      <Filter>Core</Filter>
+    <ClInclude Include="Serialisation\AssetManager.h">
+      <Filter>Serialisation</Filter>
     </ClInclude>
-    <ClInclude Include="Input\Input.h">
-      <Filter>Input</Filter>
+    <ClInclude Include="Core\Utilities\Callback.h">
+      <Filter>Core\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Input\ControllerElement.h">
-      <Filter>Input</Filter>
+    <ClInclude Include="Serialisation\Serialisable.h">
+      <Filter>Serialisation</Filter>
     </ClInclude>
-    <ClInclude Include="Input\Controller.h">
-      <Filter>Input</Filter>
+    <ClInclude Include="Core\Utilities\Hash.h">
+      <Filter>Core\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Input\Action.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\ControllerMap.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\ActionMap.h">
-      <Filter>Input</Filter>
+    <ClInclude Include="FileSystem\FileSystem.h">
+      <Filter>FileSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,20 +65,11 @@
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Input\ControllerElement.cpp">
-      <Filter>Input</Filter>
+    <ClCompile Include="FileSystem\FileSystem_Windows.cpp">
+      <Filter>FileSystem</Filter>
     </ClCompile>
-    <ClCompile Include="Input\Controller.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\ControllerMap.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\ActionMap.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\Input.cpp">
-      <Filter>Input</Filter>
+    <ClCompile Include="FileSystem\FileSystem.cpp">
+      <Filter>FileSystem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
