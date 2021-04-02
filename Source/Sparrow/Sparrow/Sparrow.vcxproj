@@ -153,14 +153,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Core\Callback.h" />
     <ClInclude Include="Core\Defines.h" />
+    <ClInclude Include="Core\Utilities\Callback.h" />
+    <ClInclude Include="Core\Utilities\Hash.h" />
+    <ClInclude Include="FileSystem\FileSystem.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Rendering\GLRenderer.h" />
     <ClInclude Include="Rendering\Renderer.h" />
     <ClInclude Include="Rendering\Window.h" />
+    <ClInclude Include="Serialisation\Serialisable.h" />
+    <ClInclude Include="Serialisation\AssetManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FileSystem\FileSystem_Windows.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Rendering\GLRenderer.cpp" />
     <ClCompile Include="Rendering\Renderer.cpp" />
