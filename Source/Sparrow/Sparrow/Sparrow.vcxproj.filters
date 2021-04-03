@@ -7,6 +7,9 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Utilities">
+      <UniqueIdentifier>{9ddf94d0-49da-4e61-b8e1-42648808c3ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -15,17 +18,17 @@
     <ClInclude Include="Rendering\Window.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Defines.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Rendering\Renderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\GLRenderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Callback.h">
-      <Filter>Core</Filter>
+    <ClInclude Include="Core\Utilities\Callback.h">
+      <Filter>Core\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utilities\Hash.h">
+      <Filter>Core\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
