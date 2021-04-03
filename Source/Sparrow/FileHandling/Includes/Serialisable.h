@@ -1,5 +1,7 @@
 #pragma once
-#include <iostream>
+#include <istream>
+#include <ostream>
+#include <cstdint>
 
 namespace Sparrow
 {
@@ -8,17 +10,18 @@ namespace Sparrow
 		class Serialisable
 		{
 		public:
-			Serialisable(uint16_t version, std::istream& stream) :
-				Version(version)
-			{}
+			Serialisable(std::istream& stream)
+			{
+				stream >> m_Version;
+			}
 
 			Serialisable(uint16_t version) :
-				Version(version)
+				m_Version(version)
 			{}
 
 			virtual void Serialise(std::ostream& stream) const
 			{
-				stream << Version << Delimiter;
+				stream << m_Version << Delimiter;
 			}
 
 		protected:
@@ -26,22 +29,22 @@ namespace Sparrow
 			const char* Delimiter = "\n";
 
 		protected:
-			uint16_t Version;
+			uint16_t m_Version;
 		};
 	}
 }
 
 /*
 * Example of a serialisable class
-* #include "Serialisation/Serialisable.h"
+* #include "Serialisable.h"
 
 class Example : public Sparrow::Serialisation::Serialisable
 {
 public:
-	Example(uint16_t version, std::istream& stream) :
-		Serialisable(version, stream)
+	Example(std::istream& stream) :
+		Serialisable(stream)
 	{
-		if (version == 1)
+		if (m_Version == 1)
 		{
 			stream >> m_float;
 			stream >> m_int;
