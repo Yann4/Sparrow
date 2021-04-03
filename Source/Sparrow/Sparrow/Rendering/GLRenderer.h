@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Defines.h"
+#include "Defines.h"
 #include "Renderer.h"
 
 #if SPARROW_GL

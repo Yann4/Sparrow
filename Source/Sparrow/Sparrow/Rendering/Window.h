@@ -1,5 +1,5 @@
 #pragma once
-#include "Core/Defines.h"
+#include "Defines.h"
 #include "Core/Utilities/Callback.h"
 
 #if SPARROW_GL

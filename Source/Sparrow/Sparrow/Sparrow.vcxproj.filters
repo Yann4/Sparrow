@@ -7,17 +7,11 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Serialisation">
-      <UniqueIdentifier>{00c47eb3-d16d-4a79-bca8-a20029199463}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Utilities">
       <UniqueIdentifier>{9ddf94d0-49da-4e61-b8e1-42648808c3ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FileSystem">
-      <UniqueIdentifier>{31e8dcd8-7eaa-4ed2-ab21-f5877239423a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Input">
-      <UniqueIdentifier>{4026df53-46bd-460f-8d09-0428e0c224bb}</UniqueIdentifier>
+      <UniqueIdentifier>{9612b32b-059f-4085-848d-9b46f9f4cec0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,29 +21,17 @@
     <ClInclude Include="Rendering\Window.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Defines.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Rendering\Renderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\GLRenderer.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Serialisation\AssetManager.h">
-      <Filter>Serialisation</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Utilities\Callback.h">
       <Filter>Core\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Serialisation\Serialisable.h">
-      <Filter>Serialisation</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Utilities\Hash.h">
       <Filter>Core\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="FileSystem\FileSystem.h">
-      <Filter>FileSystem</Filter>
     </ClInclude>
     <ClInclude Include="Input\Action.h">
       <Filter>Input</Filter>
@@ -85,12 +67,6 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="FileSystem\FileSystem_Windows.cpp">
-      <Filter>FileSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="FileSystem\FileSystem.cpp">
-      <Filter>FileSystem</Filter>
     </ClCompile>
     <ClCompile Include="Input\ActionMap.cpp">
       <Filter>Input</Filter>

@@ -1,7 +1,7 @@
-#include "Core/Defines.h"
+#include "Defines.h"
 
 #if SPARROW_WINDOWS
-#include "FileSystem/FileSystem.h"
+#include "FileSystem.h"
 
 namespace Sparrow
 {
