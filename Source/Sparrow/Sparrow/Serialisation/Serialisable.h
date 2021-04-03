@@ -22,6 +22,7 @@ namespace Sparrow
 			}
 
 		protected:
+			virtual uint16_t LatestVersion() const = 0;
 			const char* Delimiter = "\n";
 
 		protected:

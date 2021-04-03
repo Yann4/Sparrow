@@ -11,7 +11,6 @@ namespace Sparrow
 {
 	namespace Input
 	{
-
 		class Controller
 		{
 		public:

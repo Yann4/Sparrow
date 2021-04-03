@@ -1,17 +1,19 @@
 #pragma once
 #include <cstdint>
+#include <string>
 
 #include "Core/Utilities/Callback.h"
+#include "Serialisation/Serialisable.h"
 
 namespace Sparrow
 {
 	namespace Input
 	{
-		class ControllerElement
+		class ControllerElement : public Serialisation::Serialisable
 		{
 		public:
 			ControllerElement(uint32_t id, float activationThreshold, const char* name);
-			ControllerElement(const char* json);
+			ControllerElement(uint16_t version, std::istream& stream);
 
 			void Update(float value);
 
@@ -20,7 +22,10 @@ namespace Sparrow
 			bool BecameActiveThisFrame() const { return !WasActiveLastFrame() && IsActive(); }
 			float Value() const { return m_Value; }
 
-			const char* GetJSON() const;
+			void Serialise(std::ostream& stream) const override;
+
+		protected:
+			uint16_t LatestVersion() const override { return 1; }
 		public:
 			Callback<void, uint32_t /*ElementID*/> OnActivate;
 			Callback<void, uint32_t /*ElementID*/> OnDeactivate;
@@ -28,7 +33,7 @@ namespace Sparrow
 			//Configuration values
 			uint32_t m_ElementID;
 			float m_ActivationThreshold;
-			const char* m_Name;
+			std::string m_Name;
 			//TODO: Image m_Glyph;
 
 			float m_Value;
