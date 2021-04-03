@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Includes\Utilities">
+      <UniqueIdentifier>{1ccdcfc2-af0c-478b-ac9c-e8d59362baf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -20,6 +23,12 @@
     </ClInclude>
     <ClInclude Include="Includes\Defines.h">
       <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Utilities\Callback.h">
+      <Filter>Includes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Utilities\Hash.h">
+      <Filter>Includes\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
