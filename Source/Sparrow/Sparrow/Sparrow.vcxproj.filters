@@ -7,12 +7,6 @@
     <Filter Include="Rendering">
       <UniqueIdentifier>{194205b4-a7c3-4681-bfe0-2305088dc690}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Utilities">
-      <UniqueIdentifier>{9ddf94d0-49da-4e61-b8e1-42648808c3ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Input">
-      <UniqueIdentifier>{9612b32b-059f-4085-848d-9b46f9f4cec0}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -26,30 +20,6 @@
     </ClInclude>
     <ClInclude Include="Rendering\GLRenderer.h">
       <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Utilities\Callback.h">
-      <Filter>Core\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Utilities\Hash.h">
-      <Filter>Core\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\Action.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\ActionMap.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\Controller.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\ControllerElement.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\ControllerMap.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Input\Input.h">
-      <Filter>Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,21 +37,6 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\glad\src\glad.c">
       <Filter>Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\ActionMap.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\Controller.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\ControllerElement.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\ControllerMap.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Input\Input.cpp">
-      <Filter>Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

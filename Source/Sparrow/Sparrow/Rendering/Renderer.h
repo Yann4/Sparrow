@@ -11,6 +11,7 @@ namespace Sparrow
 		{
 		public:
 			Renderer(int32_t width, int32_t height, const char* windowName);
+			virtual ~Renderer();
 
 			bool IsReady() const { return m_Initialised; }
 

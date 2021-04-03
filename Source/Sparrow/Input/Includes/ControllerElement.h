@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <string>
 
-#include "Core/Utilities/Callback.h"
+#include "Utilities/Callback.h"
 #include "Serialisable.h"
 
 namespace Sparrow
@@ -13,7 +13,8 @@ namespace Sparrow
 		{
 		public:
 			ControllerElement(uint32_t id, float activationThreshold, const char* name);
-			ControllerElement(uint16_t version, std::istream& stream);
+			ControllerElement(std::istream& stream);
+			void Serialise(std::ostream& stream) const override;
 
 			void Update(float value);
 
@@ -22,7 +23,6 @@ namespace Sparrow
 			bool BecameActiveThisFrame() const { return !WasActiveLastFrame() && IsActive(); }
 			float Value() const { return m_Value; }
 
-			void Serialise(std::ostream& stream) const override;
 
 		protected:
 			uint16_t LatestVersion() const override { return 1; }

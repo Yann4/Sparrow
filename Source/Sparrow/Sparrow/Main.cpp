@@ -1,7 +1,7 @@
 #include "Main.h"
 #include "Rendering/GLRenderer.h"
 
-int main(int argc, char** argv)
+int main(int , char** )
 {
 	Sparrow::Application app;
 

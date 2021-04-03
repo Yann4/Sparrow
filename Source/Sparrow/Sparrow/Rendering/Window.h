@@ -1,6 +1,6 @@
 #pragma once
 #include "Defines.h"
-#include "Core/Utilities/Callback.h"
+#include "Utilities/Callback.h"
 
 #if SPARROW_GL
 #include <glad/glad.h>

@@ -11,11 +11,11 @@ namespace Sparrow
 			m_Value(0.0f), m_ActiveLastFrame(false)
 		{ }
 
-		ControllerElement::ControllerElement(uint16_t version, std::istream& stream) :
-			Serialisation::Serialisable(version),
+		ControllerElement::ControllerElement(std::istream& stream) :
+			Serialisation::Serialisable(stream),
 			m_Value(0.0f), m_ActiveLastFrame(false)
 		{
-			if (version == 1)
+			if (m_Version == 1)
 			{
 				stream >> m_Name;
 				stream >> m_ElementID;
@@ -23,12 +23,14 @@ namespace Sparrow
 			}
 			else
 			{
-				throw std::exception("Unexpected serialisation version " + version);
+				throw std::exception("Unexpected serialisation version " + m_Version);
 			}
 		}
 
 		void ControllerElement::Serialise(std::ostream& stream) const
 		{
+			Serialisable::Serialise(stream);
+
 			stream << m_Name << Delimiter;
 			stream << m_ElementID << Delimiter;
 			stream << m_ActivationThreshold << Delimiter;

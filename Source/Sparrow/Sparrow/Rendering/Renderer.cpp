@@ -7,5 +7,8 @@ namespace Sparrow
 		Renderer::Renderer(int32_t, int32_t, const char*) :
 			m_Window(nullptr)
 		{ }
+
+		Renderer::~Renderer()
+		{ }
 	}
 }

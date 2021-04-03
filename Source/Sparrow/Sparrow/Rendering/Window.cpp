@@ -27,14 +27,14 @@ namespace Sparrow
 		bool Window::ShouldClose()
 		{
 #if SPARROW_GL
-			return glfwWindowShouldClose(m_Handle);
+			return glfwWindowShouldClose(m_Handle) == GL_TRUE;
 #else
 			return true;
 #endif
 		}
 
 #if SPARROW_GL
-		void Window::OnGLWindowResize(GLFWwindow* window, int32_t width, int32_t height)
+		void Window::OnGLWindowResize(GLFWwindow* , int32_t width, int32_t height)
 		{
 			OnWindowResized.Invoke(width, height);
 		}
