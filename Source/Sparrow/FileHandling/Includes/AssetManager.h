@@ -3,7 +3,7 @@
 #include <memory>
 #include <sstream>
 
-#include "FileSystem/FileSystem.h"
+#include "FileSystem.h"
 #include "Serialisable.h"
 
 namespace Sparrow
