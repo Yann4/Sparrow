@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "InputEditor": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
