@@ -85,13 +85,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Libraries\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)\Intermediate\Libraries\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\Intermediate\Libraries\Core\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>Sparrow_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Libraries\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)\Intermediate\Libraries\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\Intermediate\Libraries\Core\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>Sparrow_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -137,6 +137,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
