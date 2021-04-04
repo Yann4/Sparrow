@@ -1,4 +1,6 @@
 #pragma once
+#include "String.h"
+
 #include <istream>
 #include <ostream>
 #include <cstdint>
@@ -10,23 +12,14 @@ namespace Sparrow
 		class Serialisable
 		{
 		public:
-			Serialisable(std::istream& stream)
-			{
-				stream >> m_Version;
-			}
+			Serialisable(std::istream& stream);
+			Serialisable(uint16_t version);
 
-			Serialisable(uint16_t version) :
-				m_Version(version)
-			{}
-
-			virtual void Serialise(std::ostream& stream) const
-			{
-				stream << m_Version << Delimiter;
-			}
+			virtual void Serialise(std::ostream& stream) const;
 
 		protected:
 			virtual uint16_t LatestVersion() const = 0;
-			const char* Delimiter = "\n";
+			static const char* Delimiter;
 
 		protected:
 			uint16_t m_Version;

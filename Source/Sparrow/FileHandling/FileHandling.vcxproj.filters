@@ -7,6 +7,9 @@
     <Filter Include="Includes">
       <UniqueIdentifier>{1e539bda-9364-4f27-88ac-fd958c316341}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Serialisation">
+      <UniqueIdentifier>{28c8637a-d14a-40d2-af43-919c066779a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileSystem\FileSystem.cpp">
@@ -14,6 +17,9 @@
     </ClCompile>
     <ClCompile Include="FileSystem\FileSystem_Windows.cpp">
       <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Serialisation\Serialisable.cpp">
+      <Filter>Serialisation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

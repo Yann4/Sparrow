@@ -175,6 +175,7 @@
   <ItemGroup>
     <ClCompile Include="FileSystem\FileSystem.cpp" />
     <ClCompile Include="FileSystem\FileSystem_Windows.cpp" />
+    <ClCompile Include="Serialisation\Serialisable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Includes\AssetManager.h" />
