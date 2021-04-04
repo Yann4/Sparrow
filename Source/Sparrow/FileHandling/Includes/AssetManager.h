@@ -1,10 +1,11 @@
 #pragma once
+#include "SparrowString.h"
+#include "FileSystem.h"
+#include "Serialisable.h"
+
 #include <functional>
 #include <memory>
 #include <sstream>
-
-#include "FileSystem.h"
-#include "Serialisable.h"
 
 namespace Sparrow
 {
@@ -27,29 +28,55 @@ namespace Sparrow
 		{
 		public:
 			template <class AssetType, typename = std::enable_if<std::is_base_of_v<Serialisable, AssetType>>>
-			static bool Save(AssetClass type, const char* path, const AssetType& serialise)
+			static bool Save(AssetClass type, const String& path, const AssetType& serialise)
 			{
 				std::stringstream stream;
 				serialise.Serialise(stream);
 				
-				FileSystem::Save(stream, path);
+				FileSystem::Save(GetDataPath(type, path).c_str(), stream);
 
 				return true;
 			}
 
 			template <class AssetType, typename = std::enable_if<std::is_base_of_v<Serialisable, AssetType>>>
-			static bool Load(AssetClass type, const char* path, AssetLoadedEvent<AssetType> OnLoaded)
+			static bool Load(AssetClass type, const String& path, AssetLoadedEvent<AssetType> OnLoaded)
 			{
-				FileSystem::Load(path, [type, path, OnLoaded](std::istream & stream)
+				FileSystem::Load(GetDataPath(type, path).c_str(), [type, path, OnLoaded](std::istream & stream)
 				{
-					uint16_t version;
-					stream >> version;
-
-					std::shared_ptr<AssetType> loadedAsset = std::make_shared<AssetType>(version, stream);
+					std::shared_ptr<AssetType> loadedAsset = std::make_shared<AssetType>(stream);
 					OnLoaded(stream.good(), loadedAsset);
 				});
 
 				return true;
+			}
+
+		private:
+			static String RootDirectory()
+			{
+				return "E:/Dev/Sparrow/Data";
+			}
+
+			static String GetDataPath(AssetClass asset, const String& relativeAssetPath)
+			{
+				String path = RootDirectory();
+				switch (asset)
+				{
+				case AssetClass::Config:
+					path += "/Data/Config/";
+					break;
+				case AssetClass::GameData:
+					path += "/Data/";
+					break;
+				case AssetClass::UserGenerated:
+					path += "%APPDATA%/Sparrow/";
+					break;
+				default:
+					throw std::exception("AssetClass not implemented");
+				}
+
+				path += relativeAssetPath;
+
+				return path;
 			}
 		};
 	}

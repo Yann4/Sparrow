@@ -6,6 +6,9 @@ namespace Sparrow
 {
 	namespace Input
 	{
+		const String Manager::s_ConfigPath = Sparrow::String("Input/Controllers/");
+		const String Manager::s_ControllerExtension = Sparrow::String(".cconf");
+
 		Manager::Manager() :
 			m_ActionMaps(), m_Controllers(), m_CurrentControllerIndex(0)
 		{

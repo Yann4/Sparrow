@@ -4,10 +4,10 @@ namespace Sparrow
 {
 	namespace FileSystem
 	{
-		std::ifstream CreateStream(const char* data, uint32_t length)
+		std::ifstream CreateStream(const Sparrow::String& data)
 		{
 			std::ifstream stream;
-			stream.rdbuf()->sputn(data, length);
+			stream.rdbuf()->sputn(data.c_str(), data.Length());
 			return stream;
 		}
 

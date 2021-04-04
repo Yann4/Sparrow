@@ -7,11 +7,11 @@ namespace Sparrow
 {
 	namespace FileSystem
 	{
-		bool Save(std::ostream& stream, const char* path)
+		bool Save(const Sparrow::String& path, std::ostream& stream)
 		{
 			stream.seekp(0);
 
-			std::ofstream file(path, std::ofstream::out | std::ofstream::trunc);
+			std::ofstream file(path.c_str(), std::ofstream::out | std::ofstream::trunc);
 			if (!file.is_open() || !file.good())
 			{
 				return false;
@@ -25,9 +25,9 @@ namespace Sparrow
 			return file.good();
 		}
 
-		void Load(const char* path, std::function<void(std::istream& /*stream*/)> onLoaded)
+		void Load(const Sparrow::String& path, std::function<void(std::istream& /*stream*/)> onLoaded)
 		{
-			std::ifstream fstream(path, std::fstream::in);
+			std::ifstream fstream(path.c_str(), std::fstream::in);
 			onLoaded(fstream);
 		}
 	}
