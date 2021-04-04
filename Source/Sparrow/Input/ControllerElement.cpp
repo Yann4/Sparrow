@@ -5,6 +5,12 @@ namespace Sparrow
 {
 	namespace Input
 	{
+		ControllerElement::ControllerElement() :
+			Serialisation::Serialisable(LatestVersion()),
+			m_ElementID(0), m_ActivationThreshold(0.0f), m_Name(""), 
+			m_Value(0.0f), m_ActiveLastFrame(false)
+		{ }
+
 		ControllerElement::ControllerElement(uint32_t id, float activationThreshold, const char* name) :
 			Serialisation::Serialisable(LatestVersion()),
 			m_ElementID(id), m_ActivationThreshold(activationThreshold), m_Name(name), 

@@ -1,5 +1,5 @@
 #include "ControllerMap.h"
-
+#include <iostream>
 namespace Sparrow
 {
 	namespace Input
@@ -7,6 +7,17 @@ namespace Sparrow
 		ControllerMap::ControllerMap() :
 			Serialisable(LatestVersion())
 		{ }
+
+		ControllerMap::ControllerMap(uint32_t numPairs, const uint32_t actions[256], const uint32_t elements[256]) :
+			Serialisable(LatestVersion())
+		{
+			for (uint32_t idx = 0; idx < numPairs; idx++)
+			{
+				uint32_t action = actions[idx];
+				uint32_t element = elements[idx];
+				m_Map.emplace(static_cast<Action>(action), element);
+			}
+		}
 
 		ControllerMap::ControllerMap(std::istream& stream) :
 			Serialisable(stream)
@@ -36,7 +47,7 @@ namespace Sparrow
 		{
 			Serialisable::Serialise(stream);
 
-			stream << m_Map.size();
+			stream << m_Map.size() << Delimiter;
 
 			for (auto const& val : m_Map)
 			{

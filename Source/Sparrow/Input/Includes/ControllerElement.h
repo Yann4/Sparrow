@@ -12,6 +12,7 @@ namespace Sparrow
 		class ControllerElement : public Serialisation::Serialisable
 		{
 		public:
+			ControllerElement();
 			ControllerElement(uint32_t id, float activationThreshold, const char* name);
 			ControllerElement(std::istream& stream);
 			void Serialise(std::ostream& stream) const override;

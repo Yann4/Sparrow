@@ -176,6 +176,7 @@
     <ClInclude Include="Includes\Action.h" />
     <ClInclude Include="Includes\ActionMap.h" />
     <ClInclude Include="Includes\Controller.h" />
+    <ClInclude Include="Includes\ControllerConfig.h" />
     <ClInclude Include="Includes\ControllerElement.h" />
     <ClInclude Include="Includes\ControllerMap.h" />
     <ClInclude Include="Includes\Input.h" />
@@ -183,6 +184,7 @@
   <ItemGroup>
     <ClCompile Include="ActionMap.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="ControllerConfig.cpp" />
     <ClCompile Include="ControllerElement.cpp" />
     <ClCompile Include="ControllerMap.cpp" />
     <ClCompile Include="Input.cpp" />
