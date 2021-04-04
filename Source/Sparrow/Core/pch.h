@@ -11,5 +11,6 @@
 #include "Includes/Defines.h"
 #include "Includes/Utilities/Callback.h"
 #include "Includes/Utilities/Hash.h"
+#include "Includes/SparrowString.h"
 
 #endif //PCH_H

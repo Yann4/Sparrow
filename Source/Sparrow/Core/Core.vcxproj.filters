@@ -30,9 +30,15 @@
     <ClInclude Include="Includes\Utilities\Hash.h">
       <Filter>Includes\Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Includes\SparrowString.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SparrowString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
