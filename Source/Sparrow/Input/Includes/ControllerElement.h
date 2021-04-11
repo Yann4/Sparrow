@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <string>
+#include "SparrowString.h"
 
 #include "Utilities/Callback.h"
 #include "Serialisable.h"
@@ -13,7 +13,7 @@ namespace Sparrow
 		{
 		public:
 			ControllerElement();
-			ControllerElement(uint32_t id, float activationThreshold, const char* name);
+			ControllerElement(uint32_t id, float activationThreshold, String name);
 			ControllerElement(std::istream& stream);
 			void Serialise(std::ostream& stream) const override;
 
@@ -24,6 +24,9 @@ namespace Sparrow
 			bool BecameActiveThisFrame() const { return !WasActiveLastFrame() && IsActive(); }
 			float Value() const { return m_Value; }
 
+			uint32_t ElementID() const { return m_ElementID; }
+			float ActivationThreshold() const { return m_ActivationThreshold; }
+			String Name() const { return m_Name; }
 
 		protected:
 			uint16_t LatestVersion() const override { return 1; }
@@ -34,7 +37,7 @@ namespace Sparrow
 			//Configuration values
 			uint32_t m_ElementID;
 			float m_ActivationThreshold;
-			std::string m_Name;
+			String m_Name;
 			//TODO: Image m_Glyph;
 
 			float m_Value;

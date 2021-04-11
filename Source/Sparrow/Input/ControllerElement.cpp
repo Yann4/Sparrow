@@ -11,7 +11,7 @@ namespace Sparrow
 			m_Value(0.0f), m_ActiveLastFrame(false)
 		{ }
 
-		ControllerElement::ControllerElement(uint32_t id, float activationThreshold, const char* name) :
+		ControllerElement::ControllerElement(uint32_t id, float activationThreshold, String name) :
 			Serialisation::Serialisable(LatestVersion()),
 			m_ElementID(id), m_ActivationThreshold(activationThreshold), m_Name(name), 
 			m_Value(0.0f), m_ActiveLastFrame(false)
