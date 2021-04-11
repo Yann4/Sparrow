@@ -24,7 +24,7 @@ namespace Sparrow
 
 				for (size_t idx = 0; idx < numElements; idx++)
 				{
-					m_Elements[idx] = ControllerElement(stream);
+					m_Elements.emplace_back(stream);
 				}
 			}
 			else
@@ -40,7 +40,7 @@ namespace Sparrow
 
 			m_Map.Serialise(stream);
 
-			stream << m_Elements.size();
+			stream << m_Elements.size() << Delimiter;
 			for (const ControllerElement& element : m_Elements)
 			{
 				element.Serialise(stream);
