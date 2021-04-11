@@ -1,6 +1,7 @@
 ﻿using InputEditor.InputBindings;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,9 +11,31 @@ namespace InputEditor.Bindings
 
 	class Controller
 	{
-		public string Name;
-		public List<ControllerElement> Elements = new List<ControllerElement>();
+		public string Name = string.Empty;
 		public ControllerMap Map = new ControllerMap();
+
+		public List<ControllerElement> Elements = new List<ControllerElement>();
+		public Controller()
+		{ }
+
+		public Controller(string name)
+		{
+			Name = name;
+		}
+
+		public Controller(Marshalled marshalled)
+		{
+			Name = marshalled.Name;
+			for (int idx = 0; idx < marshalled.ElementCount; idx++)
+			{
+				Elements.Add(new ControllerElement(marshalled.Elements[idx]));
+			}
+			
+			for (int idx = 0; idx < marshalled.ActionElementCount; idx++)
+			{
+				Map.Map.Add(marshalled.MapActions[idx], Elements[idx]);
+			}
+		}
 
 		public Marshalled AsMarshalled()
 		{
@@ -42,7 +65,7 @@ namespace InputEditor.Bindings
 				Array.Copy(controller.Map.Elements(), MapElements, ActionElementCount);
 			}
 
-			[MarshalAs(UnmanagedType.LPStr)]
+			[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
 			public string Name;
 
 			public UInt32 ElementCount;
@@ -57,11 +80,21 @@ namespace InputEditor.Bindings
 		}
 	}
 
-	class ControllerElement
+	public class ControllerElement
 	{
 		public UInt32 ElementID = 0;
 		public float ActivationThreshold = 0.0f;
 		public string Name = string.Empty;
+
+		public ControllerElement()
+		{ }
+
+		public ControllerElement(Marshalled marshalled)
+		{
+			ElementID = marshalled.ElementID;
+			ActivationThreshold = marshalled.ActivationThreshold;
+			Name = marshalled.Name;
+		}
 
 		public Marshalled AsMarshalled()
 		{
@@ -73,7 +106,7 @@ namespace InputEditor.Bindings
 		{
 			public UInt32 ElementID;
 			public float ActivationThreshold;
-			[MarshalAs(UnmanagedType.LPStr)]
+			[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
 			public string Name;
 
 			public Marshalled(ControllerElement element)

@@ -2,20 +2,36 @@
 #include "ControllerElement.h"
 #include "ControllerConfig.h"
 
-DLLEXPORT constexpr uint32_t GetControllerLimit() { return 128; }
+using namespace Sparrow;
+
+extern "C"
+{
+	DLLEXPORT constexpr uint32_t GetControllerLimit() { return 64; }
+}
 
 struct MarshalledElement
 {
 public:
+	MarshalledElement() :
+		ID(0), ActivationThreshold(0.0f), Name()
+	{ }
+
+	MarshalledElement(const Input::ControllerElement& other) :
+		ID(other.ElementID()), ActivationThreshold(other.ActivationThreshold())
+	{
+		strncpy_s(Name, sizeof(Name), other.Name().c_str(), other.Name().Length());
+	}
+
+public:
 	uint32_t ID;
 	float ActivationThreshold;
-	const char* Name;
+	char Name[64];
 };
 
 struct MarshalledController
 {
 public:
-	char* Name;
+	char Name[64];
 
 	uint32_t ElementCount;
 	MarshalledElement ControllerElements[GetControllerLimit()];
@@ -25,4 +41,5 @@ public:
 	uint32_t Elements[GetControllerLimit()];
 };
 
-std::shared_ptr<Sparrow::Input::ControllerConfig> GetController(const MarshalledController& marshalledController);
+std::shared_ptr<Input::ControllerConfig> GetController(const MarshalledController& marshalledController);
+MarshalledController GetMarshalledController(std::shared_ptr<Input::ControllerConfig> Controller);

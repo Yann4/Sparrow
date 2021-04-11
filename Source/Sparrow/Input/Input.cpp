@@ -6,18 +6,37 @@ namespace Sparrow
 {
 	namespace Input
 	{
-		const String Manager::s_ConfigPath = Sparrow::String("Input/Controllers/");
-		const String Manager::s_ControllerExtension = Sparrow::String(".cconf");
 
 		Manager::Manager() :
 			m_ActionMaps(), m_Controllers(), m_CurrentControllerIndex(0)
 		{
+			LoadAllControllerConfigs();
 			CheckConnectedControllers();
 		}
 
 		void Manager::CheckConnectedControllers()
 		{
 			//TODO
+		}
+
+		void Manager::LoadAllControllerConfigs()
+		{
+			Serialisation::AssetLoadedEvent<ControllerConfig> onLoaded = [&](bool success, Serialisation::AssetReference<ControllerConfig> config)
+			{
+				if (success)
+				{
+					m_ControllerConfigs.push_back(config);
+				}
+			};
+
+			const String configPath = Sparrow::String("Input/Controllers/");
+			std::vector<String> paths = Serialisation::AssetManager::GetFiles(Serialisation::AssetClass::Config, configPath);
+			m_ControllerConfigsFound = static_cast<uint8_t>(paths.size());
+
+			for (const String& path : paths)
+			{
+				Serialisation::AssetManager::Load(Serialisation::AssetClass::Config, path, onLoaded);
+			}
 		}
 
 		bool Manager::GetAction(Action action) const
