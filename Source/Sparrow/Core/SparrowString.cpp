@@ -2,6 +2,8 @@
 
 namespace Sparrow
 {
+	const String String::Empty = String("");
+
 	String::String() : 
 		m_Data() 
 	{}
@@ -21,7 +23,7 @@ namespace Sparrow
 	{}
 
 	String::String(String&& other) noexcept :
-		m_Data(std::exchange(other.m_Data, nullptr))
+		m_Data(std::move(other.m_Data))
 	{}
 
 	String::~String()
@@ -40,6 +42,11 @@ namespace Sparrow
 	uint32_t String::Compare(const String& other) const 
 	{
 		return m_Data.compare(other.m_Data);
+	}
+
+	bool String::Contains(const String& other) const
+	{
+		return m_Data.find(other.m_Data) != m_Data.npos;
 	}
 
 	String& String::operator+=(const String& rhs)
@@ -66,7 +73,7 @@ namespace Sparrow
 	inline bool operator<=(const String& lhs, const String& rhs) { return !operator>(rhs, lhs); }
 	inline bool operator>=(const String& lhs, const String& rhs) { return !operator<(rhs, lhs); }
 
-	inline String operator+(String lhs, const String& rhs)
+	String operator+(String lhs, const String& rhs)
 	{
 		lhs += rhs;
 		return lhs;
@@ -74,7 +81,7 @@ namespace Sparrow
 
 	std::ostream& operator<<(std::ostream& os, const String& obj)
 	{
-		os << obj.Length();
+		os << obj.Length() << " ";
 		os << obj.c_str();
 		return os;
 	}
@@ -85,6 +92,7 @@ namespace Sparrow
 		is >> length;
 
 		char* str = new char[length];
+		is.seekg(1, std::ios::cur); //Consume space
 		is.read(str, length);
 
 		obj = String(str, length);
